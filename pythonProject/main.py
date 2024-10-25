@@ -4,4 +4,4 @@ game = Game()
 game.run()
 
 
-## parou no 01:05:33
+## parou no 15.25

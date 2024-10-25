@@ -1,9 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from pygame.examples.moveit import HEIGHT
 
 from code.background import Background
-from code.const import WIN_WIDTH
-
+from code.const import WIN_WIDTH, WIN_HEIGHT
+from code.player import Player
 
 
 class EntityFactory:
@@ -17,3 +18,5 @@ class EntityFactory:
                     list_bg.append(Background(f'Level1Bg{i}', (0, 0)))
                     list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
+            case 'Player1':
+                return Player('Player1', (10, WIN_HEIGHT / 2) )
