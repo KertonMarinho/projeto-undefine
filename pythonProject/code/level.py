@@ -6,6 +6,7 @@ import random
 
 import pygame
 from pygame import Rect, Surface
+from pygame.font import Font
 
 from code.EntityMediator import EntityMediator
 from code.const import COLOR_WHITE, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME

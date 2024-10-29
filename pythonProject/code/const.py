@@ -23,8 +23,10 @@ ENTITY_SPEED ={
     'Player1Shot': 1,
     'Player2': 3,
     'Player2Shot': 3,
-    'Enemy1': 2,
+    'Enemy1': 1,
+    'Enemy1Shot': 5,
     'Enemy2':  1,
+    'Enemy2Shot': 2,
 
 }
 ENTITY_HEALTH = {
@@ -49,16 +51,18 @@ ENTITY_HEALTH = {
     'Enemy2': 60,
     'Enemy2Shot': 1,
 }
-ENTITY_SHOT_DELAY = {
-    'Player1': 20,
-    'Player2': 15,
-}
 #M
 MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P - COOPERATIVE',
                'NEW GAME 2P - COMPETITIVE',
                'SCORE',
                'EXIT')
+ENTITY_SHOT_DELAY = {
+    'Player1': 20,
+    'Player2': 15,
+    'Enemy1': 100,
+    'Enemy2': 200,
+}
 #p
 PLAYER_KEY_UP = {'Player1': pygame.K_UP,
                  'Player2': pygame.K_w}
