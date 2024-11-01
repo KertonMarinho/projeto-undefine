@@ -1,13 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import sys
-
 import pygame
 
 from code.const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
 from code.level import Level
 from code.menu import Menu
-
 
 class Game:
     def __init__(self):
