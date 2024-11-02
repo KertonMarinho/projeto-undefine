@@ -35,6 +35,7 @@ class Level:
         pygame.time.set_timer(EVENT_ENEMY,  SPAWN_TIME)
         pygame.time.set_timer(EVENT_TIMEOUT, TIMEOUT_STEP) #TIMEOUT_STEP=SIGNIF PASSO, QUAL A QUANT. DE TEMPO QUE VAI ACONTCER
 
+
     def mostrar_game_over(self):
         # Preenche a tela com preto
         self.window.fill(C_BLACK)
@@ -78,6 +79,7 @@ class Level:
                             if isinstance(ent, Player) and ent.name == 'Player2':
                                 player_score[1] = ent.score
                         return True
+
 
                 found_player = False
                 for ent in self. entity_list:

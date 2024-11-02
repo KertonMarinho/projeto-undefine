@@ -5,6 +5,7 @@ import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
+from code import const
 from code.Score import Score
 from code.const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION, C_RED, C_GREEN, NEXT_LEVEL_POS
 from code.level import Level
@@ -15,13 +16,17 @@ class Game:
     def __init__(self):
         pygame.init()
         self.window = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))
-
-    def mostrar_inicio_level(self):
+    def mostrar_inicio_level2(self):
 
         self.window.blit(pygame.image.load("./asset/Level2Bg0.png"), (0, 0))
         self.next_level_text(74, "Level 2", C_RED, NEXT_LEVEL_POS)
         pygame.display.flip()
         pygame.time.delay(2000)  # Aguarda 2 segundos antes de sair ou reiniciar
+    def mostrar_inicio_level3(self):
+            self.window.blit(pygame.image.load("./asset/Level3Bg2.png"), (0, 0))
+            self.next_level_text(74, "Level 3", C_RED, NEXT_LEVEL_POS)
+            pygame.display.flip()
+            pygame.time.delay(2000)  # Aguarda 2 segundos antes de sair ou reiniciar
 
     def run(self):
         while True:
@@ -34,19 +39,20 @@ class Game:
                 level = Level(self.window, 'Level1', menu_return, player_score)
                 level_return = level.run(player_score)
                 if level_return:
-                    self.mostrar_inicio_level()
+                    self.mostrar_inicio_level2()
                     level = Level(self.window, 'Level2', menu_return, player_score)
                     level_return = level.run(player_score)
                     if level_return:
-                       score.save(menu_return, player_score)
+                        self.mostrar_inicio_level3()
+                        level = Level(self.window, 'Level3', menu_return, player_score)
+                        level_return = level.run(player_score)
+                        if level_return:
+                           score.save(menu_return, player_score)
             elif menu_return == MENU_OPTION[3]:
                 score.show()
-
-
             elif menu_return == MENU_OPTION[4]:
                 pygame.quit()  # close window
                 quit()  # end game
-
             else:
                 pygame.quit()
                 sys.exit()
