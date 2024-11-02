@@ -25,10 +25,11 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)  # toca a musica(1- = toca a musica infinitamente
             self.score_text(48, 'You Win!!', C_YELLOW, SCORE_POS["Title"])
-
+            text = 'Enter Player 1  name (4 characters:)'
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
-                text = 'Enter Player 1  name (4 characters:)'
+
             if game_mode == MENU_OPTION[1]:
                 score = (player_score[0] + player_score[1])/2
                 text = 'Player Team enter  name (4 characters):'
