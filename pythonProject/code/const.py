@@ -10,6 +10,7 @@ C_GREEN = (0, 128, 128)
 C_CYAN = (0, 126, 128)
 C_RED = (255, 0, 0)
 C_BLACK = (0, 0, 0)
+
 #E
 
 
@@ -119,7 +120,8 @@ MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P - COMPETITIVE',
                'SCORE',
                'EXIT')
-
+# 'NEW GAME 2P - COOPERATIVE', soma os pontos dos jogadores
+# 'NEW GAME 2P - COMPETITIVE',compara a pontuação dos jogadores e ver quem ganha
 
 #p
 PLAYER_KEY_UP = {'Player1': pygame.K_UP,
@@ -133,10 +135,30 @@ PLAYER_KEY_RIGHT = {'Player1': pygame.K_RIGHT,
 PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
                     'Player2': pygame.K_LCTRL}
 #S
-SPAWN_TIME = 4000
+SPAWN_TIME = 4000 # nuemro de entranda de inimigos
 #T
 TIMEOUT_STEP = 100 # 100ms
-TIMEOUT_LEVEL = 20000 #20s
+TIMEOUT_LEVEL = 20000 #20s #tempe de fase
+
 #w
 WIN_WIDTH = 576
 WIN_HEIGHT = 324
+#N
+NEXT_LEVEL_POS = ((WIN_HEIGHT/2 )- 60, 80)
+#S
+SCORE_POS = {'Title': ((WIN_WIDTH / 2)- 140, 30),
+             'Title_top': ((WIN_WIDTH / 2)- 200, 30),
+             'EnterName': ((WIN_WIDTH / 2)- 200, 80),
+             'Label': ((WIN_WIDTH / 2)- 140, 90),
+             'Name': ((WIN_WIDTH / 2)- 80, 110),
+             0: ((WIN_WIDTH / 2)- 180, 110),
+             1: ((WIN_WIDTH / 2)- 180, 130),
+             2: ((WIN_WIDTH / 2)- 180, 150),
+             3: ((WIN_WIDTH / 2)- 180, 170),
+             4: ((WIN_WIDTH / 2)- 180, 190),
+             5: ((WIN_WIDTH / 2)- 180, 210),
+             6: ((WIN_WIDTH / 2)- 180, 230),
+             7: ((WIN_WIDTH / 2)- 180, 250),
+             8: ((WIN_WIDTH / 2)- 180, 270),
+             9: ((WIN_WIDTH / 2)- 180, 290),
+             }

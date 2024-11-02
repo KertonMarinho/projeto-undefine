@@ -10,7 +10,7 @@ from pygame.font import Font
 
 from code.EntityMediator import EntityMediator
 from code.const import C_WHITE, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME, C_GREEN, C_CYAN, EVENT_TIMEOUT, \
-    TIMEOUT_STEP, TIMEOUT_LEVEL, C_RED, C_BLACK
+    TIMEOUT_STEP, TIMEOUT_LEVEL, C_RED, C_BLACK, NEXT_LEVEL_POS
 from code.enemy import Enemy
 from code.entity import Entity
 from code.entityFactory import EntityFactory
@@ -38,19 +38,10 @@ class Level:
     def mostrar_game_over(self):
         # Preenche a tela com preto
         self.window.fill(C_BLACK)
-
-        # Renderiza o texto "Game Over" no centro da tela
-        font = pygame.font.Font(None, 74)  # Fonte e tamanho do texto
-        game_over_text = font.render("Game Over", True, C_RED)
-
-        #  posicionamento do texto
-        text_rect = game_over_text.get_rect(
-            center=(int(self.window.get_width() / 2), self.window.get_height() // 2)
-        )
-        # Desenha o texto na tela
-        self.window.blit(game_over_text, text_rect)
+        self.level_text(74, "Game Over", C_RED, NEXT_LEVEL_POS)
         pygame.display.flip()
-        pygame.time.delay(4000)   # Aguarda 2 segundos antes de sair ou reiniciar
+        pygame.time.delay(4000)  # Aguarda 2 segundos antes de sair ou reiniciar
+
 
     def run(self, player_score: list[int]):
         pygame.mixer_music.load(f'./asset/{self.name}.mp3')
